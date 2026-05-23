@@ -1,0 +1,14 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# PHP
+vendor/
+*.log
+
+# Uploaded product photos (keep the folder, ignore its contents)
+assets/images/uploads/*
+!assets/images/uploads/.gitkeep
