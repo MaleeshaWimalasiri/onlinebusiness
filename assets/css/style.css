@@ -1,0 +1,288 @@
+/* =====================================================================
+ *  Aurora Jewels - Stylesheet
+ *  Custom styling layered on top of Bootstrap 5
+ * ================================================================== */
+
+:root {
+    --gold:      #b8893d;
+    --gold-dark: #8c6529;
+    --ink:       #2a2520;
+    --cream:     #faf6ef;
+    --soft:      #f1e8d8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+h1, h2, h3, h4, h5, .display-font {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+a { text-decoration: none; }
+
+.text-gold { color: var(--gold) !important; }
+
+/* ----- Navbar ------------------------------------------------------- */
+.site-navbar {
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, .06);
+}
+.navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--ink) !important;
+}
+.brand-mark { color: var(--gold); }
+.site-navbar .nav-link {
+    color: var(--ink) !important;
+    font-size: .92rem;
+    font-weight: 400;
+    margin: 0 .35rem;
+}
+.site-navbar .nav-link:hover { color: var(--gold) !important; }
+.btn-nav {
+    background: var(--gold);
+    color: #fff !important;
+    border-radius: 30px;
+    padding: .4rem 1.2rem !important;
+}
+.btn-nav:hover { background: var(--gold-dark); }
+.cart-badge {
+    background: var(--gold);
+    border-radius: 50%;
+    font-size: .7rem;
+}
+
+/* ----- Buttons ------------------------------------------------------ */
+.btn-gold, .btn-outline-gold {
+    border-radius: 30px;
+    padding: .55rem 1.6rem;
+    transition: .2s;
+    white-space: nowrap;
+}
+.btn-gold {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: #fff;
+}
+.btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
+.btn-outline-gold {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+}
+.btn-outline-gold:hover { background: var(--gold); color: #fff; }
+
+/* Small variants must override the default gold padding above so they
+   line up with Bootstrap's own .btn-sm buttons (e.g. in admin tables). */
+.btn-sm.btn-gold, .btn-sm.btn-outline-gold {
+    padding: .25rem .7rem;
+    font-size: .8rem;
+}
+
+/* Keep the buttons inside a table's Actions column tidy and aligned. */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    align-items: center;
+}
+
+/* ----- Hero --------------------------------------------------------- */
+.hero {
+    background: linear-gradient(rgba(42, 37, 32, .55), rgba(42, 37, 32, .55)),
+                radial-gradient(circle at 30% 30%, #5a4a33, #2a2520);
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+}
+.hero h1 { font-size: 3.4rem; margin-bottom: 1rem; }
+.hero p  { font-size: 1.1rem; opacity: .9; max-width: 600px; margin: 0 auto 1.8rem; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.section-title h2 { font-size: 2.4rem; }
+.section-title .line {
+    width: 60px; height: 3px;
+    background: var(--gold);
+    margin: .6rem auto 0;
+}
+
+/* ----- Category / product cards ------------------------------------ */
+.feature-card, .product-card {
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .05);
+    transition: transform .25s, box-shadow .25s;
+    height: 100%;
+}
+.product-card:hover, .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+}
+.product-thumb {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    background: var(--soft);
+}
+.product-card .card-body { padding: 1.1rem; }
+.product-card .price {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.product-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+}
+.cat-pill {
+    display: inline-block;
+    background: var(--soft);
+    color: var(--gold-dark);
+    font-size: .72rem;
+    padding: .2rem .7rem;
+    border-radius: 20px;
+    margin-bottom: .4rem;
+}
+
+/* ----- Stars -------------------------------------------------------- */
+.star { color: var(--gold); font-size: 1rem; }
+
+/* ----- Product detail ---------------------------------------------- */
+.detail-img {
+    width: 100%;
+    border-radius: 12px;
+    background: var(--soft);
+    object-fit: cover;
+}
+.price-tag { font-size: 2rem; color: var(--gold); font-weight: 600; }
+
+/* ----- Forms / panels ---------------------------------------------- */
+.panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .05);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 .2rem rgba(184, 137, 61, .15);
+}
+
+/* ----- Footer ------------------------------------------------------- */
+.site-footer {
+    background: var(--ink);
+    color: #d8cdbd;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
+.site-footer h5, .site-footer h6 { color: #fff; }
+.site-footer a { color: #d8cdbd; }
+.site-footer a:hover { color: var(--gold); }
+.footer-divider { border-color: #463f36; margin: 2rem 0 1rem; }
+
+/* ----- Admin -------------------------------------------------------- */
+.admin-body { background: #f4f5f7; }
+.admin-sidebar {
+    background: var(--ink);
+    color: #cfc7ba;
+    padding: 1rem 0;
+}
+@media (min-width: 768px) {
+    .admin-sidebar { min-height: 100vh; padding: 1.5rem 0; }
+}
+.admin-topbar {
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1rem;
+}
+.admin-topbar .brand-mb {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+}
+.admin-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: .3rem .65rem;
+    cursor: pointer;
+}
+.admin-sidebar .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    padding: 0 1rem 1rem;
+}
+.admin-sidebar .brand-sub {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: .6rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3px;
+}
+.admin-sidebar a {
+    display: block;
+    color: #cfc7ba;
+    padding: .7rem 1rem;
+    font-size: .92rem;
+}
+.admin-sidebar hr { margin-left: 1rem; margin-right: 1rem; }
+.admin-sidebar a:hover, .admin-sidebar a.active {
+    background: rgba(184, 137, 61, .2);
+    color: #fff;
+    border-left: 3px solid var(--gold);
+}
+.stat-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.4rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+}
+.stat-card .num { font-size: 2rem; font-weight: 600; color: var(--gold); }
+.stat-card .lbl { color: #7a7468; font-size: .85rem; }
+
+.table thead { background: var(--ink); color: #fff; }
+.badge-status { font-size: .75rem; padding: .35rem .6rem; }
+
+@media (max-width: 768px) {
+    .hero { padding: 3.5rem 0; }
+    .hero h1 { font-size: 2.3rem; }
+    .hero p { font-size: 1rem; }
+    .section-title h2 { font-size: 1.9rem; }
+    .site-footer { text-align: center; }
+    .price-tag { font-size: 1.6rem; }
+}
+
+@media (max-width: 576px) {
+    .product-thumb { height: 175px; }
+    .navbar-brand { font-size: 1.45rem; }
+    .panel { padding: 1.25rem; }
+    .hero h1 { font-size: 1.95rem; }
+    .btn-gold, .btn-outline-gold { padding: .5rem 1.1rem; }
+}
